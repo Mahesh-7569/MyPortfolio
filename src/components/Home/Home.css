@@ -21,6 +21,7 @@
 .home h1 {
   font-size: 60px;
   margin-bottom: 10px;
+  color: #38bdf8;
 }
 
 .home h1 span {
@@ -95,9 +96,12 @@
   .home-image img {
     width: 250px;
     height: 250px;
+    margin-top: 30px;
   }
 
   .home h1 {
     font-size: 45px;
   }
+
+
 }
