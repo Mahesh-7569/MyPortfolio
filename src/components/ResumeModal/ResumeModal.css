@@ -1,0 +1,310 @@
+.resume-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 15, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.resume-modal-container {
+  width: 100%;
+  max-width: 950px;
+  max-height: 90vh;
+  background: #0f172a;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: zoomUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes zoomUp {
+  from { transform: scale(0.95) translateY(20px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Modal Header Bar */
+.modal-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 26px;
+  background: #0a0e17;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-title-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modal-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cyan-bright);
+}
+
+.modal-title-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0284c7, #6366f1);
+  border: none;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.modal-print-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* Resume Sheet (Scrollable) */
+.resume-sheet {
+  padding: 35px 40px;
+  overflow-y: auto;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  font-size: 13.5px;
+}
+
+.r-header {
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #0f172a;
+  margin-bottom: 18px;
+}
+
+.r-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.r-contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.r-contact-line a {
+  color: #0284c7;
+  text-decoration: none;
+}
+
+.r-contact-line a:hover {
+  text-decoration: underline;
+}
+
+.dot {
+  color: #94a3b8;
+}
+
+.r-section {
+  margin-bottom: 18px;
+}
+
+.r-section-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 1.5px solid #cbd5e1;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.r-text {
+  color: #334155;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.r-skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.r-skill-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  font-size: 13px;
+}
+
+.r-skill-label {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.r-skill-items {
+  color: #334155;
+}
+
+.r-exp-entry {
+  margin-bottom: 14px;
+}
+
+.r-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 14px;
+}
+
+.r-role {
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.r-company {
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.r-date {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 12.5px;
+}
+
+.r-location {
+  font-size: 12.5px;
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.r-bullet-list {
+  padding-left: 20px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.r-bullet-list li {
+  color: #334155;
+  line-height: 1.5;
+}
+
+.r-tech-line {
+  font-size: 12.5px;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.r-tech-line strong {
+  color: #0f172a;
+}
+
+.r-edu-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.r-degree {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.r-college {
+  color: #475569;
+  font-size: 13px;
+}
+
+/* Print CSS */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .resume-sheet, .resume-sheet * {
+    visibility: visible;
+  }
+  .resume-modal-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    padding: 0;
+  }
+  .resume-modal-container {
+    border: none;
+    box-shadow: none;
+    max-width: 100%;
+    height: auto;
+  }
+  .modal-header-bar {
+    display: none;
+  }
+  .resume-sheet {
+    padding: 0;
+  }
+}
+

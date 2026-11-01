@@ -1,131 +1,240 @@
+import { useState } from "react";
+import { 
+  FolderGit2, 
+  ExternalLink, 
+  CheckCircle2, 
+  Sparkles,
+  Server,
+  Layers,
+  ArrowUpRight
+} from "lucide-react";
+import { GitHubIcon } from "../common/Icons";
 import "./Projects.css";
 
 function Projects() {
+  const [filter, setFilter] = useState("all");
+
   const projects = [
     {
-      title: "Insurance Claim Management Platform",
-      category: "Backend & Web Application",
+      id: "smart-machine",
+      title: "Smart Machine Enterprise Backend & Real-Time Pipeline",
+      category: "Enterprise Microservices",
+      type: "java",
+      context: "JRSS Smart Machine",
+      accent: "cyan",
       description:
-        "Contributed to a role-based insurance claim management application for managing users, insurance workflows and claim-related operations.",
-      features: [
-        "Developed and maintained REST API routes for user and application modules.",
-        "Implemented JWT-based authentication and role-based login validation.",
-        "Implemented secure password validation using bcrypt.",
-        "Worked with Prisma ORM for database queries and relational data handling.",
-        "Developed user creation logic with dynamic employee and company-based user IDs.",
-        "Implemented multipart form-data handling and file upload workflows.",
-        "Integrated email notifications for automatically generated login credentials.",
-        "Validated API responses, request data and database persistence.",
+        "High-performance enterprise backend system powering industrial machine operations, Kafka asynchronous event streaming, Redis caching, and real-time WebSocket telemetry.",
+      contributions: [
+        "Architected clean layered structure (Controller, Service, Repository, DTO, Entity) adhering to SOLID principles.",
+        "Integrated Apache Kafka for asynchronous telemetry message queuing and event decoupling.",
+        "Implemented Redis caching layer to accelerate state queries and minimize SQL Server database workload.",
+        "Engineered WebSockets channel for live bi-directional machine status streaming to client consoles.",
+        "Implemented Spring Security with Role-Based Access Control (RBAC) across Operator and Admin privileges.",
+        "Documented all endpoints using Swagger / OpenAPI and validated through automated Postman collections.",
       ],
       technologies: [
-        "Next.js",
-        "Node.js",
-        "JavaScript",
-        "Prisma ORM",
-        "PostgreSQL",
-        "JWT",
-        "bcrypt",
-        "REST APIs",
+        "Java",
+        "Spring Boot",
+        "Apache Kafka",
+        "Redis",
+        "WebSockets",
+        "Spring Security (RBAC)",
+        "Spring Data JPA",
+        "Hibernate",
+        "SQL Server",
+        "Swagger",
       ],
+      githubUrl: "https://github.com/Mahesh-7569",
     },
     {
-      title: "Enterprise Backend API System",
-      category: "Java Backend Development",
+      id: "insurance-platform",
+      title: "Insurance Claim Management & Multi-Role Workflow Platform",
+      category: "Workflow & Cloud Storage",
+      type: "node",
+      context: "Zeksta Technology Pvt. Ltd",
+      accent: "violet",
       description:
-        "Developed and tested backend modules for a large-scale REST API application using Java and Spring Boot with structured service and persistence layers.",
-      features: [
-        "Developed REST APIs using Java and Spring Boot.",
-        "Implemented Controller, Service, Repository, Entity and DTO layers.",
-        "Used Spring Data JPA and Hibernate for database persistence.",
-        "Implemented CRUD operations and backend business validation.",
-        "Worked with entity relationships and relational database mappings.",
-        "Tested REST endpoints using Swagger OpenAPI.",
-        "Verified API request and response data against database records.",
-        "Debugged persistence, entity mapping and database constraint issues.",
+        "End-to-end backend platform handling insurance claims, customer policies, employee role delegations, AWS S3 document storage, and SMTP alerts.",
+      contributions: [
+        "Built robust REST APIs using Node.js & Express.js with Prisma ORM querying PostgreSQL.",
+        "Implemented JWT-based authentication and Role-Based Access Control (RBAC) across Admin, Employee, and User modules.",
+        "Integrated AWS S3 for secure, encrypted cloud upload of claim documents, receipts, and proofs.",
+        "Engineered performant search, multi-field filtering, and cursor/offset pagination APIs for massive claim datasets.",
+        "Configured SMTP email notification triggers for automatic credential delivery and status milestone updates.",
+      ],
+      technologies: [
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Prisma ORM",
+        "AWS S3",
+        "JWT Auth",
+        "SMTP",
+        "REST APIs",
+        "Git",
+      ],
+      githubUrl: "https://github.com/Mahesh-7569",
+    },
+    {
+      id: "event-logger",
+      title: "Delay Tracking & Event History Audit Microservice",
+      category: "Backend Event Logging",
+      type: "java",
+      context: "Enterprise Service",
+      accent: "amber",
+      description:
+        "Transactional backend microservice dedicated to tracking event life-cycles, state machine transitions (OPEN/CLOSED), and immutable audit history logging.",
+      contributions: [
+        "Implemented status-based OPEN and CLOSED state machine logic with zero race conditions.",
+        "Developed backend constraint validators to prohibit concurrent duplicate active delay incidents.",
+        "Created an immutable historical change-log capturing timestamps, operator IDs, and state transitions.",
+        "Utilized Spring @Transactional boundaries to guarantee atomic persistence to SQL Server.",
+        "Exposed REST APIs with comprehensive DTO projections to maximize serialization performance.",
       ],
       technologies: [
         "Java",
         "Spring Boot",
         "Spring Data JPA",
         "Hibernate",
-        "REST APIs",
         "SQL Server",
-        "Swagger",
+        "Swagger OpenAPI",
         "Maven",
       ],
+      githubUrl: "https://github.com/Mahesh-7569",
     },
     {
-      title: "Delay Tracking & Event Logging Service",
-      category: "Backend Business Logic",
+      id: "security-engine",
+      title: "Enterprise RBAC Authentication & Authorization Engine",
+      category: "Security Microservice",
+      type: "security",
+      context: "Core Security Framework",
+      accent: "emerald",
       description:
-        "Implemented a backend service for tracking application events, status transitions and complete event history using Spring Boot.",
-      features: [
-        "Implemented APIs for creating, updating and retrieving tracking records.",
-        "Developed status-based OPEN and CLOSED workflow logic.",
-        "Prevented duplicate active records using backend validation.",
-        "Implemented category and reason management APIs.",
-        "Created event history logging for tracking record changes.",
-        "Used transactional service methods for consistent database operations.",
-        "Implemented DTO and entity mapping for API responses.",
-        "Tested APIs and verified persisted records in SQL Server.",
+        "Centralized authentication framework delivering stateless JWT validation, bcrypt credential encryption, and fine-grained authorization filters for microservices.",
+      contributions: [
+        "Designed custom OncePerRequestFilter for intercepting and validating Bearer JWT claims.",
+        "Implemented encrypted password hashing and validation using bcrypt.",
+        "Configured role authority hierarchies ensuring strict isolation between system roles.",
+        "Implemented global exception handler catching authentication and access-denied anomalies into uniform JSON responses.",
       ],
       technologies: [
-        "Java",
-        "Spring Boot",
-        "Spring Data JPA",
-        "Hibernate",
-        "SQL Server",
-        "Swagger",
+        "Java 21",
+        "Spring Security",
+        "JWT",
         "REST APIs",
+        "SQL Server",
+        "PostgreSQL",
       ],
+      githubUrl: "https://github.com/Mahesh-7569",
     },
   ];
 
+  const filteredProjects = filter === "all" 
+    ? projects 
+    : projects.filter((p) => p.type === filter);
+
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="projects-section">
       <div className="projects-container">
-        <h2 className="section-title">
-          Featured <span>Projects</span>
-        </h2>
+        <div className="section-header">
+          <div className="section-badge">
+            <FolderGit2 size={14} />
+            <span>Featured Portfolio</span>
+          </div>
+          <h2 className="section-title">
+            Key Backend <span>Projects</span>
+          </h2>
+          <p className="section-description">
+            Production-grade software systems highlighting my capability to deliver scalable APIs,
+            asynchronous message queuing, secure authorization, and resilient database workflows.
+          </p>
 
-        <p className="projects-description">
-          Backend projects focused on REST API development, business logic,
-          database persistence, authentication and application deployment.
-        </p>
+          {/* Filter Pills */}
+          <div className="project-filters">
+            <button 
+              className={`p-filter-btn ${filter === "all" ? "active" : ""}`}
+              onClick={() => setFilter("all")}
+            >
+              All Projects ({projects.length})
+            </button>
+            <button 
+              className={`p-filter-btn ${filter === "java" ? "active" : ""}`}
+              onClick={() => setFilter("java")}
+            >
+              Java & Spring Boot
+            </button>
+            <button 
+              className={`p-filter-btn ${filter === "node" ? "active" : ""}`}
+              onClick={() => setFilter("node")}
+            >
+              Node.js & Cloud
+            </button>
+            <button 
+              className={`p-filter-btn ${filter === "security" ? "active" : ""}`}
+              onClick={() => setFilter("security")}
+            >
+              Security & RBAC
+            </button>
+          </div>
+        </div>
 
-        <div className="projects-list">
-          {projects.map((project, index) => (
-            <div className="project-card" key={index}>
-              <div className="project-header">
-                <div>
-                  <span className="project-number">
-                    PROJECT {String(index + 1).padStart(2, "0")}
+        {/* Projects Grid */}
+        <div className="projects-grid">
+          {filteredProjects.map((project, index) => (
+            <div key={project.id} className={`project-card glass-card accent-${project.accent}`}>
+              {/* Card Header Top */}
+              <div className="card-top-bar">
+                <div className="card-identity">
+                  <span className="project-index">0{index + 1}</span>
+                  <span className={`project-category-tag tag-${project.accent}`}>
+                    {project.category}
                   </span>
-
-                  <h3>{project.title}</h3>
                 </div>
-
-                <span className="project-category">
-                  {project.category}
-                </span>
+                <div className="project-context-tag">
+                  {project.context}
+                </div>
               </div>
 
-              <p className="project-description">
-                {project.description}
-              </p>
+              {/* Title & Description */}
+              <h3 className="project-heading">{project.title}</h3>
+              <p className="project-summary">{project.description}</p>
 
-              <h4>Key Contributions</h4>
+              {/* Key Highlights */}
+              <div className="project-contributions-box">
+                <span className="contributions-header">Key Engineering Contributions:</span>
+                <ul className="contributions-items">
+                  {project.contributions.map((item, idx) => (
+                    <li key={idx} className="contrib-item">
+                      <CheckCircle2 size={15} className={`contrib-icon ${project.accent}`} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <ul className="project-features">
-                {project.features.map((feature, featureIndex) => (
-                  <li key={featureIndex}>{feature}</li>
-                ))}
-              </ul>
+              {/* Tech Tags */}
+              <div className="project-tech-container">
+                <div className="tech-tags-list">
+                  {project.technologies.map((tech, tIdx) => (
+                    <span key={tIdx} className={`project-tech-tag ${project.accent}`}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="technology-list">
-                {project.technologies.map((technology, technologyIndex) => (
-                  <span key={technologyIndex}>{technology}</span>
-                ))}
+                {/* Card Action Link */}
+                <div className="project-actions-row">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-github-btn"
+                  >
+                    <GitHubIcon size={16} />
+                    <span>View Repository</span>
+                    <ArrowUpRight size={15} />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
