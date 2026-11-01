@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
-import { Menu, X, FileText, Send, Sparkles } from "lucide-react";
-=======
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
->>>>>>> cc61760435e60e8c56555727bcea11f4a2eca62d
+import { Menu, X, FileText, Send } from "lucide-react";
 import "./Navbar.css";
 
 function Navbar({ onOpenResume }) {
@@ -33,7 +28,6 @@ function Navbar({ onOpenResume }) {
   ];
 
   return (
-<<<<<<< HEAD
     <header className={`navbar-header ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <a href="#home" className="navbar-logo">
@@ -121,74 +115,6 @@ function Navbar({ onOpenResume }) {
         </ul>
       </div>
     </header>
-=======
-    <nav className="navbar navbar-expand-lg fixed-top">
-      <div className="container">
-
-        {/* Logo */}
-        <a className="navbar-brand logo" href="#home">
-          Mehesh <span>Cheerla</span>
-        </a>
-
-        {/* Mobile Toggle */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Navigation Links */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav">
-
-            <li className="nav-item">
-              <a className="nav-link" href="#home">
-                Home
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#about">
-                About
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#skills">
-                Skills
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#experience">
-                Experience
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#projects">
-                Projects
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#contact">
-                Contact
-              </a>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </nav>
->>>>>>> cc61760435e60e8c56555727bcea11f4a2eca62d
   );
 }
 
